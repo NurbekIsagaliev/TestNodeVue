@@ -34,7 +34,7 @@
   let controller = new AbortController(); 
   
   const search = async () => {
-     // Reset error message
+     
   errorMessage.value = '';
 
 if (!email.value) {
@@ -42,7 +42,7 @@ if (!email.value) {
   return;
 }
 
-// Abort previous request
+
 controller.abort();
 
 controller = new AbortController();
@@ -53,7 +53,7 @@ try {
     { signal: controller.signal }
   );
 
-  // Check if the response contains any results
+  
   if (response.data.length === 0) {
     errorMessage.value = 'No matching results found.';
   } else {
